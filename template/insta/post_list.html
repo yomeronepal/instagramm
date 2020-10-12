@@ -1,0 +1,63 @@
+{% extends 'insta/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="post__list">
+    <div class="post__form" style="background-color:#FAFAFA;border:1px solid lightgray;border-radius:3px;padding:10px;width:50%;margin-top:30px ">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+        </form>
+    </div>
+
+
+    {% for post in posts%}
+    <div class="post">
+
+
+        <div class="post__header">
+            <div  class="postheader__first">
+                <img class="avatar avatar-32 img-circle" style="vertical-align: middle; width:40px; height: 40px; border-radius: 40%;" src="{% static 'media/logo.png' %}" />
+                <h3>{{post.user}}</h3>
+            </div>
+            <div>
+                <i class="material-icons">edit</i>
+            </div>
+        </div>
+        <div class="post__image">
+            {% if post.post_image.url != null %}
+            <img src="{{post.post_image.url}}" alt="" sizes=100% />
+            {% endif %}
+
+        </div>
+        <div class="post__lower">
+            <div class="post__utility">
+                <div class="utility__first">
+                    <a href="{% url 'like' post.id %}"><i class="material-icons">favorite_border</i></a>
+                    <i class="material-icons">chat_bubble_outline</i>
+                    <i class="material-icons">send</i>
+
+                </div>
+                <div class="utility_second">
+                    <i class="material-icons">bookmark</i>
+                </div>
+            </div>
+            <h5 style="padding-left:10px;">{{post.get_total_like}} likes</h5>
+            {% if post.text != null %}
+            <h4 style="padding-left:10px;">{{post.user}}: {{post.text}}</h4>
+            {% endif %}
+            <h6 style="padding-left:10px;">{{post.time}}</h6>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

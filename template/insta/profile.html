@@ -1,0 +1,57 @@
+{% extends 'insta/base.html' %}
+{% load static %}
+{% block content %}
+<div class="profile"style="display:flex;flex-direction:column;justify-content:space-between; align-items:center;">
+    <div class="profile__info" style="display:flex;flex-direction:row;justify-content:space-between; align-items:center; width:55%">
+        <div class="profile__image" style="width:30%">
+            <img src="{% static 'media/default.jpg' %}" style=" width :200px; height :200px; border-radius: 200px;" />
+        </div>
+        <div class="profiledetail">
+            <div class="profiledetail__top" style="display:flex;flex-direction:row; justify-content:space-between; align-items:center;margin-right:7px">
+                <h3>rojesh_prajapati </h3>
+                <button class="btn btn-primary" style="width:90px; margin-left:10px">Edit</button>
+                <i class="material-icons" style="padding-left: 10px">settings</i>
+            </div>
+            <div class="profiledetail__middle" style="display:flex;flex-direction:row;justify-content:space-between">
+                <p>41 posts</p>
+                <p>509 followers</p>
+                <p>653 following</p>
+            </div>
+            <div>
+                <h6>Guns N Rojesh Prajapati</h6>
+            </div>
+        </div>
+    </div>
+    <div profile__post style="width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;margin-top:40px">
+        <div class="post__top" style="display:flex;align-items:center;flex-direction:row;justify-content:space-evenly;width:70%;border-bottom:1px solid lightgray;border-top:1px solid lightgray;padding-top:20px">
+            <div style="display:flex;flex-direction:row;">
+                <i class="material-icons">grid_on</i>
+                <p>POSTS</p>
+            </div>
+            <div style="display:flex;flex-direction:row;">
+                <i class="material-icons">live_tv</i>
+                <p>IGTV</p>
+            </div>
+            <div style="display:flex;flex-direction:row;">
+                <i class="material-icons">bookmark_border</i>
+                <p>SAVED</p>
+            </div>
+            <div style="display:flex;flex-direction:row;">
+                <i class="material-icons">account_box</i>
+                <p>TAGGED</p>
+            </div>
+        </div>
+        
+        <div class="row gallery" style="width:80%">
+            {% for post in user_post%}
+            <div class="col-md-4" style="border:1px solid lightgray">
+                <img src="{{post.post_image.url}}" alt="" sizes=100% style="height:250px;width:300px" class="image-thumbnail" />
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock %}

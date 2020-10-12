@@ -1,0 +1,132 @@
+.nav__image {
+   max-height: 100%;
+    max-width: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+}
+
+.nav__avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.nav{
+    padding-top:10px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-evenly;
+
+}
+
+.nav__icon {
+
+    width:20%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-right:15px;
+    }
+
+.nav__search{
+    background-color:#FAFAFA;
+    border:1px solid lightgray;
+    outline:none;
+    text-align:center;
+
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.post {
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+   border-radius:3px;
+    border: 1px solid lightgray;
+    width: 50%;
+    padding-top:15px;
+    margin-top:15px;
+}
+
+.post__header{
+    display:flex;
+    align-items:center;
+    flex-direction:row;
+    padding-left:8px;
+    justify-content:space-between;
+}
+
+.post__utility{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.post__list{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    
+    
+
+
+}
+.postheader__first{
+    display:flex;
+    align-items:center;
+    flex-direction:row;
+}
+
+.utility__first {
+    display:flex;
+    align-items:center;
+    padding-left:10px
+}
+
+.utility__first > i {
+    padding-left:20px;
+}
+
+.post__image > img{
+    width:100%;
+    border:1px solid lightgray;
+}
+
+.post__lower{
+    padding-left:10px;
+    display:flex;
+    flex-direction:column;
+}
+
+.post__form{
+    padding:10px;
+    background-color:#FAFAFA;
+    border:1px solid lightgray;
+    border-radius:3px;
+}
+
+.profile{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+}
+.profiledetail__top{
+    display:flex;
+    align-items:center;
+
+}
+
+.profile__image{
+    width=200px;
+    height=200px;
+    border-radius:200px;
+}
